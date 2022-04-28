@@ -57,3 +57,20 @@ function solution(year) {
     return 21;
   }
 }
+
+// Given the string, check if it is a palindrome.
+// Input: inputString = "aabaa".
+// Output: solution(inputString) = true.
+
+function solution(inputString) {
+  const arrayValues = inputString.split('');
+  const reverseArrayValues = arrayValues.reverse();
+  const reverseString = reverseArrayValues.join('');
+
+  if (inputString == reverseString) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
