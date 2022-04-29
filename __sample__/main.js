@@ -74,3 +74,28 @@ function solution(inputString) {
     return false;
   }
 }
+
+// Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+// Input: inputArray = [3, 6, -2, -5, 7, 3].
+// Output: solution(inputArray) = 21.
+
+var arrayOfProducts = [];
+var trash = [];
+
+function solution(inputArray) {
+  for (let i = 0; i < inputArray.length; i++) {
+    let product = inputArray[i] * inputArray[i + 1];
+    if (inputArray[i + 1] === undefined) {
+      trash.push(product);
+    } else {
+      arrayOfProducts.push(product);
+    }
+  }
+  let sample = arrayOfProducts[0];
+  for (let y = 0; y < arrayOfProducts.length; y++) {
+    if (sample < arrayOfProducts[y]) {
+      sample = arrayOfProducts[y];
+    }
+  }
+  return sample;
+}
