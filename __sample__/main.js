@@ -108,3 +108,25 @@ function solution(inputArray) {
 function solution(n) {
   return (n * n) + ((n - 1) * (n - 1));
 }
+
+
+// Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non - negative integer size.Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that.Help him figure out the minimum number of additional statues needed.
+// Input: statues = [6, 2, 3, 8].
+// Output: solution(statues) = 3.
+
+function solution(statuses) {
+  let sortedNumbers = [...new Float64Array(statuses).sort()];
+  var counter = 0;
+  var newArray = [];
+  for (let i = sortedNumbers[0]; i <= sortedNumbers[sortedNumbers.length - 1]; i++) {
+    newArray.push(i);
+  }
+  for (let y = 0; y < newArray.length; y++) {
+    for (let x = 0; x < sortedNumbers.length; x++) {
+      if (newArray[y] === sortedNumbers[x]) {
+        newArray.splice(y, 1);
+      }
+    }
+  }
+  return newArray.length;
+}
