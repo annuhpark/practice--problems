@@ -130,3 +130,22 @@ function solution(statuses) {
   }
   return newArray.length;
 }
+
+// Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
+// Input: sequence: [1, 3, 2, 1]
+// Output: false
+
+function solution(sequence) {
+  var bad = 0;
+  for (let i = 0; i < sequence.length; i++) {
+    if (sequence[i] >= sequence[i + 1]) {
+      bad++;
+      if (i !== 0 && sequence[i] >= sequence[i + 2]) {
+        if (sequence[i - 1] >= sequence[i + 1]) {
+          return false;
+        }
+      }
+    }
+  }
+  return bad < 2;
+}
