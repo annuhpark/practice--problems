@@ -178,3 +178,25 @@ function solution(matrix) {
   }
   return total;
 }
+
+// Given an array of strings, return another array containing all of its longest strings.
+// Input: inputArray = ["aba", "aa", "ad", "vcd", "aba"]
+// Output: solution(inputArray) = ["aba", "vcd", "aba"]
+
+function solution(inputArray) {
+  let counter = 0;
+  let finalArray = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    for (let y = 0; y < inputArray[i].length; y++) {
+      if (y > counter) {
+        counter = y;
+      }
+    }
+  }
+  for (let x = 0; x < inputArray.length; x++) {
+    if (inputArray[x].length === counter + 1) {
+      finalArray.push(inputArray[x]);
+    }
+  }
+  return finalArray;
+}
