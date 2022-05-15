@@ -200,3 +200,41 @@ function solution(inputArray) {
   }
   return finalArray;
 }
+
+// Given two strings, find the number of common characters between them.
+// Input: s1: "aabcc"
+// s2: "adcaa"
+// Output: 3.
+
+function solution(s1, s2) {
+  let counter = 0;
+  const arrays1 = s1.split('');
+  const arrays2 = s2.split('');
+  const allEqual = arr => arr.every(val => val === arr[0]);
+  if (allEqual(arrays1) && allEqual(arrays2) && arrays1[0] === arrays2[0]) {
+    if (arrays1.length > arrays2.length) {
+      return arrays2.length;
+    } else {
+      return arrays1.length;
+    }
+  } else if (arrays1.length < arrays2.length) {
+    for (let i = 0; i < arrays1.length; i++) {
+      for (let y = 0; y < arrays2.length; y++) {
+        if (arrays1[i] === arrays2[y]) {
+          counter++;
+          arrays2.splice(y, 1);
+        }
+      }
+    }
+  } else {
+    for (let i = 0; i < arrays2.length; i++) {
+      for (let y = 0; y < arrays1.length; y++) {
+        if (arrays2[i] === arrays1[y]) {
+          counter++;
+          arrays1.splice(y, 1);
+        }
+      }
+    }
+  }
+  return counter;
+}
