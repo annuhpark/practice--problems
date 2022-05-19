@@ -263,3 +263,27 @@ function solution(n) {
     return false;
   }
 }
+
+// Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees. People can be very tall!
+// Input: a = [-1, 150, 190, 170, -1, -1, 160, 180]
+// Output: solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190]
+
+function solution(a) {
+  let arrayOfHeight = [];
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== -1) {
+      arrayOfHeight.push(a[i]);
+    }
+  }
+  arrayOfHeight.sort((a, b) => a - b);
+  // console.log(arrayOfHeight);
+  for (let x = 0; x < a.length; x++) {
+    if (a[x] === -1) {
+      continue;
+    } else if (a[x] !== -1) {
+      a.splice(x, 1, arrayOfHeight[0]);
+      arrayOfHeight.splice(0, 1);
+    }
+  }
+  return a;
+}
