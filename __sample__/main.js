@@ -287,3 +287,22 @@ function solution(a) {
   }
   return a;
 }
+
+// Complete the method / function so that it converts dash / underscore delimited words into camel casing.The first word within the output should be capitalized only if the original word was capitalized(known as Upper Camel Case, also often referred to as Pascal case).
+// Input: "the-stealth-warrior"
+//Output: "theStealthWarrior"
+
+function toCamelCase(str) {
+  let stringToArray = str.split('');
+  // console.log(stringToArray);
+  for (let i = 0; i < stringToArray.length; i++) {
+    if (stringToArray[i] === '-' || stringToArray[i] === '_') {
+      let upperCasedLetter = stringToArray[i + 1].toUpperCase();
+      // console.log(upperCasedLetter);
+      stringToArray.splice(i, 2, upperCasedLetter);
+      // console.log(stringToArray);
+    }
+  }
+  const string = stringToArray.join('');
+  return string;
+}
