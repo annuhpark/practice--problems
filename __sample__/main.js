@@ -513,3 +513,10 @@ function fizzBuzz(n) {
         }
     }
 }
+
+// Count the Employees: (Query Question)
+// The result should contain the IDs of all the companies that have more than 10000 employees, in ascending order in the following format:
+
+SELECT COMPANY.ID
+  FROM COMPANY
+  WHERE COMPANY.EMPLOYEES > 10000;
