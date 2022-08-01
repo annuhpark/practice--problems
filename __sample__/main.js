@@ -565,3 +565,20 @@ function compareTriplets(a, b) {
   finalArray.push(counter2);
   return finalArray;
 }
+
+// Complete the aVeryBigSum function in the editor below. It must return the sum of all array elements.
+
+// aVeryBigSum has the following parameter(s):
+
+// int ar[n]: an array of integers .
+// Return
+
+// long: the sum of all array elements
+
+function aVeryBigSum(ar) {
+  let sum = 0;
+  for (let i = 0; i < ar.length; i++) {
+    sum = sum + ar[i];
+  }
+  return sum;
+}
