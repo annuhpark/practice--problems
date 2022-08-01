@@ -582,3 +582,23 @@ function aVeryBigSum(ar) {
   }
   return sum;
 }
+
+// Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+function diagonalDifference(array) {
+  let counter1 = 0;
+  let counter2 = 0;
+  let counter3 = array.length - 1;
+  for (let i = 0; i < array.length; i++) {
+    counter1 = counter1 + array[i][i];
+  }
+  for (let y = 0; y < array.length; y++) {
+    counter2 = counter2 + array[y][counter3];
+    counter3 = counter3 - 1;
+  }
+  if (counter1 >= counter2) {
+    return counter1 - counter2;
+  } else if (counter1 < counter2) {
+    return counter2 - counter1;
+  }
+}
