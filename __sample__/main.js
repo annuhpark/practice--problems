@@ -538,3 +538,30 @@ function simpleArraySum(ar) {
   }
   return counter;
 }
+
+// The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].
+
+// If a[i] > b[i], then Alice is awarded 1 point.
+// If a[i] < b[i], then Bob is awarded 1 point.
+// If a[i] = b[i], then neither person receives a point.
+// Comparison points is the total points a person earned.
+
+// Given a and b, determine their respective comparison points.
+
+function compareTriplets(a, b) {
+  let finalArray = [];
+  let counter1 = 0;
+  let counter2 = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] > b[i]) {
+      counter1 = counter1 + 1;
+    } else if (a[i] < b[i]) {
+      counter2 = counter2 + 1;
+    } else if (a[i] === b[i]) {
+      continue;
+    }
+  }
+  finalArray.push(counter1);
+  finalArray.push(counter2);
+  return finalArray;
+}
