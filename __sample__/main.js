@@ -160,7 +160,6 @@ function solution(sequence) {
 function solution(matrix) {
   let total = 0;
   for (let i = 0; i < matrix.length; i++) {
-    // console.log(matrix[i]);
     for (let y = 0; y < matrix[i].length; y++) {
       // console.log(matrix[i][y]);
       if (matrix[i][y] === 0) {
