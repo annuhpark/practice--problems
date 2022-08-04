@@ -309,7 +309,7 @@ function toCamelCase(str) {
 
 // Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers.No floats or non - positive integers will be passed.
 // Input: For example, when an array is passed like [19, 5, 42, 2, 77]..
-// Outout
+// Outout: 7.
 
 function sumTwoSmallestNumbers(numbers) {
   numbers = numbers.sort(function (a, b) { return a - b; });
