@@ -620,3 +620,27 @@ function birthdayCakeCandles(candles) {
   }
   return counter;
 }
+
+// Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal.
+
+function plusMinus(arr) {
+  let positiveNumber = 0;
+  let negativeNumber = 0;
+  let zero = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (Math.sign(arr[i]) === 1) {
+      positiveNumber = positiveNumber + 1;
+    } else if (Math.sign(arr[i]) === -1) {
+      negativeNumber = negativeNumber + 1;
+    } else {
+      zero = zero + 1;
+    }
+  }
+  const finalPositive = (positiveNumber / arr.length).toFixed(6);
+  // console.log(finalPositive);
+  const finalNegative = (negativeNumber / arr.length).toFixed(6);
+  const finalZero = (zero / arr.length).toFixed(6);
+  console.log(`${finalPositive}`);
+  console.log(`${finalNegative}`);
+  console.log(`${finalZero}`);
+}
