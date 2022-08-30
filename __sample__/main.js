@@ -644,3 +644,37 @@ function plusMinus(arr) {
   console.log(`${finalNegative}`);
   console.log(`${finalZero}`);
 }
+
+// Given an array a, your task is to apply the following mutation to it:
+
+// Array a mutates into a new array b of the same length
+// For each i from 0 to a.length - 1 inclusive, b[i] = a[i - 1] + a[i] + a[i + 1]
+// If some element in the sum a[i - 1] + a[i] + a[i + 1] does not exist, it is considered to be 0
+// For a = [4, 0, 1, -2, 3], the output should be solution(a) = [4, 5, -1, 2, 1].
+
+function solution(a) {
+  let finalArray = [];
+  let counter = 0;
+  if (a.length === 1) {
+    finalArray.push(a[0]);
+    return finalArray;
+  }
+  for (let i = 0; i < a.length; i++) {
+    if (a[i - 1] === undefined) {
+      // console.log('hello');
+      counter = counter + a[i] + a[i + 1];
+      // console.log(counter);
+      finalArray.push(counter);
+      counter = 0;
+    } else if (a[i + 1] === undefined) {
+      counter = counter + a[i] + a[i - 1];
+      finalArray.push(counter);
+      counter = 0;
+    } else {
+      counter = a[i - 1] + a[i] + a[i + 1];
+      finalArray.push(counter);
+      counter = 0;
+    }
+  }
+  return finalArray;
+}
