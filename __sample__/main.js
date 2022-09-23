@@ -8,6 +8,7 @@ function solution(param1, param2) {
   return param1 + param2;
 }
 
+// Reviewed:
 // Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
 // Input: year = 1905.
 // Output: solution(year) = 20.
@@ -58,6 +59,7 @@ function solution(year) {
   }
 }
 
+// Reviewed:
 // Given the string, check if it is a palindrome.
 // Input: inputString = "aabaa".
 // Output: solution(inputString) = true.
@@ -263,6 +265,7 @@ function solution(n) {
   }
 }
 
+// Reviewed:
 // Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees. People can be very tall!
 // Input: a = [-1, 150, 190, 170, -1, -1, 160, 180]
 // Output: solution(a) = [-1, 150, 160, 170, -1, -1, 180, 190]
